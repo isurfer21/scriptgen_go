@@ -135,8 +135,21 @@ Here are some ways to install the _ScriptGen_ tool, written in Go, on your local
 
 2. **Building from source:** If you have a Go development environment set up on your computer, you can build _ScriptGen_ from source. To do this, clone the _ScriptGen_ repository from GitHub and navigate to the cloned repository. Then, run the `go build` command to build the project. This will create an executable binary that you can place in a directory that is in your system's `PATH`.
 
-3. **Using `go get`:** Since the _ScriptGen_ tool is available as a Go package, you can use the `go get` command to download and install it. To do this, run the following command:
+3. **Using `go install`:** Since the _ScriptGen_ tool is available as a Go package, you can use the `go install` command to download and install it. To do this, run the following command:
 ```
-go get github.com/isurfer21/scriptgen_go
+go install github.com/isurfer21/scriptgen_go@latest
 ```
 This will download the _ScriptGen_ package and its dependencies, and install the `scriptgen` binary in your `$GOPATH/bin` directory. Make sure that this directory is in your system's `PATH` so that you can run the `scriptgen` command from anywhere.
+
+### Uninstallation
+
+To remove the build installed via `go install` command on _Windows_, run the following command:
+```
+rmdir /s /q "%GOPATH%/pkg/mod/github.com/isurfer21/scriptgen_go@latest"
+del "%GOPATH%/bin/scriptgen_go.exe"
+```
+Otherwise, to remove it on _macOS_ and _Linux_, run the following command:
+```
+rm -rf "$GOPATH\pkg\mod\github.com\isurfer21\scriptgen_go@latest"
+rm "$GOPATH\bin\scriptgen_go.exe"
+```
