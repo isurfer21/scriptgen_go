@@ -39,7 +39,7 @@ func main() {
 	}
 
 	if version {
-		fmt.Printf("scriptgen version %s\n", Version)
+		fmt.Printf("ScriptGen version %s\n", Version)
 		return
 	}
 

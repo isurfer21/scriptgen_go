@@ -27,6 +27,8 @@ git clone https://github.com/isurfer21/scriptgen_go.git
 cd scriptgen_go
 ```
 
+### For development
+
 4. Build the project using `go build`. On Windows, run the following command:
 ```
 go build -o scriptgen.exe
@@ -39,6 +41,43 @@ go build -o scriptgen
 5. After running these commands, you should have a local copy of the ScriptGen project that is ready to use.
 
 6. The executable binary can be found in the current directory. On Windows, it is named `scriptgen.exe`, while on macOS and Linux it is simply named `scriptgen`.
+
+### For production release
+
+7. To generate an optimized binary for this Go program, you can use the `go build` command with the `-ldflags` option to set the appropriate flags for optimization. For example, to generate an optimized binary for the `scriptgen.go` program, you can use the following command:
+
+```
+go build -ldflags="-s -w" -o scriptgen
+```
+
+This will generate a binary file named `scriptgen` (or `scriptgen.exe` on Windows) that is optimized for production release.
+
+### Cross platform production build
+
+To generate an optimized binary for production release of the `scriptgen.go` program for different operating systems, you can use the `GOOS` and `GOARCH` environment variables to specify the target operating system and architecture, respectively. Here are the commands to generate the production build of `scriptgen.go` for Windows, macOS, and Linux:
+
+- For Windows (64-bit):
+```
+set GOOS=windows
+set GOARCH=amd64
+go build -ldflags="-s -w" -o scriptgen.exe
+```
+
+- For macOS (64-bit):
+```
+export GOOS=darwin
+export GOARCH=amd64
+go build -ldflags="-s -w" -o scriptgen
+```
+
+- For Linux (64-bit):
+```
+export GOOS=linux
+export GOARCH=amd64
+go build -ldflags="-s -w" -o scriptgen
+```
+
+These commands will generate an optimized binary file named `scriptgen.exe` for Windows and `scriptgen` for macOS and Linux.
 
 ## Usage
 
