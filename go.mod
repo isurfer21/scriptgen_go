@@ -1,3 +1,3 @@
-module example.com/m/v2
+module github.com/isurfer21/scriptgen_go
 
 go 1.19
